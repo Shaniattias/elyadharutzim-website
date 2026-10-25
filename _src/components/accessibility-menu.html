@@ -1,0 +1,195 @@
+<!-- ============ תפריט נגישות ============
+     כפתור צף (סמל הנגישות הבינלאומי) שפותח חלונית צד עם ארבעה חלקים:
+     פרופילי נגישות, התאמות ניווט, התאמות צבע והתאמות תוכן.
+     הלוגיקה: assets/js/site/accessibility.js · העיצוב: assets/css/28-accessibility-menu.css -->
+<button
+  type="button"
+  class="a11y-btn"
+  id="a11yBtn"
+  aria-expanded="false"
+  aria-controls="a11yPanel"
+  aria-label="פתיחת תפריט הנגישות"
+  title="נגישות">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="4.2" r="2" />
+    <path
+      d="M4.5 7.6c2.4.7 4.9 1 7.5 1s5.1-.3 7.5-1l.5 1.9c-1.9.6-3.9.9-6 1.1v3.2l2.3 7.2-1.9.6L12 15l-2.4 6.6-1.9-.6 2.3-7.2v-3.2c-2.1-.2-4.1-.5-6-1.1z" />
+  </svg>
+</button>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yT" hidden>
+  <div class="a11y-top">
+    <button type="button" class="a11y-close" data-a11y-close aria-label="סגירת תפריט הנגישות">✕</button>
+    <h2 id="a11yT">נגישות</h2>
+    <button type="button" class="a11y-reset-top" data-a11y-reset>איפוס</button>
+  </div>
+  <div class="a11y-body">
+    <section class="a11y-sec">
+      <h3>
+        <button type="button" class="a11y-sec-t" aria-expanded="true" aria-controls="a11yP">
+          פרופילי נגישות<i aria-hidden="true"></i>
+        </button>
+      </h3>
+      <div class="a11y-grid" id="a11yP">
+        <button type="button" data-profile="vision" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" /></svg
+          ><span>לקויות ראייה</span>
+        </button>
+        <button type="button" data-profile="seizure" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" /></svg
+          ><span>בטוח לאפילפסיה</span>
+        </button>
+        <button type="button" data-profile="adhd" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" />
+            <circle cx="12" cy="12" r="4.5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" /></svg
+          ><span>הפרעות קשב וריכוז</span>
+        </button>
+        <button type="button" data-profile="cog" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z" /></svg
+          ><span>לקויות קוגניטיביות</span>
+        </button>
+        <button type="button" data-profile="kbd" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2.5" y="6" width="19" height="12" rx="2" />
+            <path d="M6 10h1.5M10 10h1.5M14 10h1.5M18 10h.5M7 14h10" /></svg
+          ><span>ניווט מקלדת</span>
+        </button>
+      </div>
+    </section>
+    <section class="a11y-sec">
+      <h3>
+        <button type="button" class="a11y-sec-t" aria-expanded="true" aria-controls="a11yN">
+          התאמות ניווט<i aria-hidden="true"></i>
+        </button>
+      </h3>
+      <div class="a11y-grid" id="a11yN">
+        <button type="button" data-a="kbd" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2.5" y="6" width="19" height="12" rx="2" />
+            <path d="M6 10h1.5M10 10h1.5M14 10h1.5M18 10h.5M7 14h10" /></svg
+          ><span>ניווט מקלדת</span>
+        </button>
+        <button type="button" data-a="tts" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9z" />
+            <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /></svg
+          ><span>הקראת טקסט</span>
+        </button>
+        <button type="button" data-a="guide" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="9" width="20" height="6" rx="1.5" />
+            <path d="M2 5h20M2 19h20" opacity=".45" /></svg
+          ><span>מדריך קריאה</span>
+        </button>
+        <button type="button" data-a="cursor" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.5L10 19z" /></svg
+          ><span>סמן עכבר גדול</span>
+        </button>
+        <button type="button" data-a="still" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" /></svg
+          ><span>עצירת אנימציות</span>
+        </button>
+      </div>
+    </section>
+    <section class="a11y-sec">
+      <h3>
+        <button type="button" class="a11y-sec-t" aria-expanded="true" aria-controls="a11yC">
+          התאמות צבע<i aria-hidden="true"></i>
+        </button>
+      </h3>
+      <div class="a11y-grid" id="a11yC">
+        <button type="button" data-a="gray" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+            <path d="M12 9v6M9.5 10v4M14.5 10v4" /></svg
+          ><span>מונוכרום</span>
+        </button>
+        <button type="button" data-a="dark" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="currentColor" /></svg
+          ><span>ניגודיות כהה</span>
+        </button>
+        <button type="button" data-a="contrast" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" /></svg
+          ><span>ניגודיות בהירה</span>
+        </button>
+        <button type="button" data-a="lowsat" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />
+            <path d="M6.5 16h11" /></svg
+          ><span>רוויה נמוכה</span>
+        </button>
+        <button type="button" data-a="highsat" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" />
+            <path d="M7 12.5h10M6.3 15h11.4M7.5 17.5h9" /></svg
+          ><span>רוויה גבוהה</span>
+        </button>
+        <button type="button" data-a="invert" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M12 3.5v17A8.5 8.5 0 0 0 12 3.5z" fill="currentColor" /></svg
+          ><span>היפוך צבעים</span>
+        </button>
+      </div>
+    </section>
+    <section class="a11y-sec">
+      <h3>
+        <button type="button" class="a11y-sec-t" aria-expanded="true" aria-controls="a11yX">
+          התאמות תוכן<i aria-hidden="true"></i>
+        </button>
+      </h3>
+      <div class="a11y-grid" id="a11yX">
+        <button type="button" data-a="t" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 18 9 6l5 12M5.7 14h6.6M15 18l3-7 3 7M15.9 16h4.2" /></svg
+          ><span>גודל טקסט: <em>רגיל</em></span>
+        </button>
+        <button type="button" data-a="spacing" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16M2 9l2-3 2 3M2 15l2 3 2-3" /></svg
+          ><span>ריווח טקסט</span>
+        </button>
+        <button type="button" data-a="font" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h4M7 19V5h10M17 5v3M10 12h6" /></svg
+          ><span>גופן קריא</span>
+        </button>
+        <button type="button" data-a="headings" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5v14M13 5v14M5 12h8M17 9l2-1v11" /></svg
+          ><span>הדגשת כותרות</span>
+        </button>
+        <button type="button" data-a="links" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1" /></svg
+          ><span>הדגשת קישורים</span>
+        </button>
+        <button type="button" data-a="noimg" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 16 5-5 4 4 3-3 6 6M4 4l16 16" /></svg
+          ><span>הסתרת תמונות</span>
+        </button>
+        <button type="button" data-a="align" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M8 10h12M4 14h16M8 18h12" /></svg
+          ><span>יישור טקסט לימין</span>
+        </button>
+      </div>
+    </section>
+  </div>
+  <div class="a11y-foot">
+    <a href="accessibility.html">הצהרת נגישות</a>
+    <span>הבחירות נשמרות בכל העמודים</span>
+  </div>
+</div>

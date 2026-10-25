@@ -1,0 +1,49 @@
+<!-- ============ הסכמה לעוגיות ============
+     פס בתחתית (מוצג רק בביקור הראשון) וחלון הגדרות.
+     הלוגיקה: assets/js/site/cookie-consent.js -->
+<div class="ck" id="ck" role="region" aria-label="הודעת עוגיות" hidden>
+  <div class="ckt">
+    <h2>עוגיות באתר</h2>
+    <p>
+      האתר משתמש רק במידע חיוני שנשמר בדפדפן שלכם, כדי לזכור את ההעדפות שבחרתם (נגישות ועוגיות). אנחנו לא
+      משתמשים כרגע בעוגיות פרסום או מדידה. אם נוסיף כלים כאלה, הם יופעלו רק בהסכמתכם.
+      <a href="cookies.html">מדיניות העוגיות</a>
+    </p>
+  </div>
+  <div class="row">
+    <button type="button" class="pri" data-ck="accept">אישור</button
+    ><button type="button" data-ck="reject">חיוניות בלבד</button
+    ><button type="button" data-ck="prefs">הגדרות</button>
+  </div>
+</div>
+<dialog class="ckd" id="ckd" aria-labelledby="ckdT">
+  <form method="dialog">
+    <h2 id="ckdT">הגדרות עוגיות</h2>
+    <p>בחרו אילו סוגי עוגיות לאפשר. אפשר לשנות את הבחירה בכל רגע דרך הקישור "הגדרות עוגיות" בתחתית האתר.</p>
+    <div class="ckopt">
+      <div>
+        <b>חיוניות</b
+        ><span>שומרות את הבחירות שלכם באתר (נגישות ועוגיות). בלעדיהן ההעדפות לא יישמרו. תמיד פעילות.</span>
+      </div>
+      <label class="sw"
+        ><input type="checkbox" checked disabled aria-label="עוגיות חיוניות, תמיד פעילות" /><i></i
+      ></label>
+    </div>
+    <div class="ckopt">
+      <div>
+        <b>סטטיסטיקה ומדידה</b><span>מדידה אנונימית של השימוש באתר, כדי לשפר אותו. לא בשימוש כרגע.</span>
+      </div>
+      <label class="sw"
+        ><input type="checkbox" name="analytics" aria-label="עוגיות סטטיסטיקה ומדידה" /><i></i
+      ></label>
+    </div>
+    <div class="ckopt">
+      <div><b>שיווק</b><span>התאמת פרסומים ברשתות ובאתרים אחרים. לא בשימוש כרגע.</span></div>
+      <label class="sw"><input type="checkbox" name="marketing" aria-label="עוגיות שיווק" /><i></i></label>
+    </div>
+    <div class="row">
+      <button class="pri" data-ck="save">שמירת הבחירה</button><button data-ck="rejectall">חיוניות בלבד</button
+      ><button data-ck="acceptall">אישור הכול</button>
+    </div>
+  </form>
+</dialog>

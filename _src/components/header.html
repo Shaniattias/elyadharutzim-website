@@ -1,0 +1,34 @@
+<!-- ============ כותרת עליונה ============
+     התפריט נבנה מתוך site.json (המפתח menu).
+     בטלפון: כפתור ההמבורגר פותח את תפריט הצד (mnav). -->
+<a class="skip" href="#main">דילוג לתוכן העיקרי</a>
+<header class="nav">
+  <nav class="pill" id="pill" aria-label="ניווט ראשי">
+    <a href="index.html" class="logo" aria-label="{{name}}, לדף הבית">{{> logo}}</a>
+    <span class="div hm" aria-hidden="true"></span>
+    <ul class="menu">
+      {{menu}}
+    </ul>
+    <span class="div hm" aria-hidden="true"></span>
+    <a class="nl ring say" href="contact.html" {{contact_current}}>צור קשר <b aria-hidden="true">↖</b></a>
+    <!-- בחירת שפה: עברית, English, Français, Deutsch, Español (נבנה ב-build.py) -->
+    {{lang_switch}}
+    <button
+      type="button"
+      class="burger"
+      id="burger"
+      aria-expanded="false"
+      aria-controls="mnav"
+      aria-label="פתיחת התפריט">
+      <i></i><i></i><i></i>
+    </button>
+  </nav>
+</header>
+
+<!-- תפריט הצד לטלפון -->
+<div class="mnav" id="mnav" aria-hidden="true">
+  <nav aria-label="תפריט ראשי לנייד">
+    {{mobile_menu}}<a class="mcta" href="{{gmail}}" target="_blank" rel="noopener">כתבו לנו במייל</a>
+    {{lang_mobile}}
+  </nav>
+</div>

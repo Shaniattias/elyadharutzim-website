@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- כותרת ותיאור לגוגל -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <link rel="canonical" href="{{url}}" />
+
+    <!-- תצוגה בשיתוף ברשתות (פייסבוק, וואטסאפ, לינקדאין) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{og_locale}}" />
+    <meta property="og:site_name" content="{{name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{domain}}/{{share_image}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#f5f2ee" />
+
+    <!-- עיצוב: הקבצים נטענים לפי הסדר של המספרים (assets/css) -->
+    {{styles}} {{head_extra}}
+  </head>
+</html>
