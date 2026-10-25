@@ -1,0 +1,28 @@
+/* =========================================================
+   מעברי עמודים
+   מעבר רך בין עמודים.
+   ========================================================= */
+
+/* ---------- soft page transitions ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  body:not([data-home]) main {
+    animation: pgIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  @keyframes pgIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  html.pg-out body {
+    opacity: 0;
+    transition: opacity 0.28s ease;
+  }
+}
+html.a11y-still body:not([data-home]) main {
+  animation: none;
+}

@@ -1,0 +1,207 @@
+/* =========================================================
+   תחתית האתר
+   קריאה לפעולה, עמודות קישורים ואייקונים של רשתות.
+   ========================================================= */
+
+/* ---------- site footer ---------- */
+.site-foot {
+  position: relative;
+  background: hsl(var(--surface) / 0.55);
+  border-top: 1px solid hsl(var(--stroke));
+  margin-top: 40px;
+}
+.fcta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding: 56px 0;
+  border-bottom: 1px solid hsl(var(--stroke));
+}
+.fcta h2 {
+  font-weight: 300;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.15;
+}
+.fcta p {
+  font-size: 14.5px;
+  color: hsl(var(--muted));
+  margin-top: 8px;
+  max-width: 30rem;
+}
+.fcta .acts {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--text) / 0.15);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+  white-space: nowrap;
+}
+.btn2.dark {
+  background: #1d1c1a;
+  color: #f5f2ee;
+  border-color: #1d1c1a;
+}
+.btn2:hover {
+  border-color: hsl(var(--text) / 0.5);
+}
+.btn2.dark:hover {
+  background: #000;
+}
+.fgrid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
+  padding: 48px 0 36px;
+}
+.fbrand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: hsl(var(--muted));
+}
+.fbrand .flogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: hsl(var(--text));
+  font-size: 16px;
+}
+.fbrand .flogo svg {
+  width: 40px;
+  height: 40px;
+}
+.fbrand a:hover {
+  color: hsl(var(--text));
+}
+.fcol h2 {
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: hsl(var(--muted));
+  margin-bottom: 14px;
+}
+.fcol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.fcol a,
+.fcol button {
+  font-size: 14px;
+  color: hsl(var(--text) / 0.85);
+  text-align: start;
+  padding: 0;
+}
+.fcol a:hover,
+.fcol button:hover {
+  color: hsl(var(--text));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* ---------- שורת הרשתות החברתיות (בהשראת Glencore): אייקונים עם קו מפריד ---------- */
+.fsocial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 0 26px;
+  border-top: 1px solid hsl(var(--stroke));
+}
+.fsocial a {
+  display: grid;
+  place-items: center;
+  padding: 4px 22px;
+  border-inline-start: 1px solid hsl(var(--text) / 0.8);
+  line-height: 0;
+}
+.fsocial a:first-child {
+  border-inline-start: 0;
+}
+.fsocial svg {
+  width: 26px;
+  height: 26px;
+  fill: hsl(var(--text));
+  transition:
+    transform 0.25s,
+    opacity 0.25s;
+}
+.fsocial a[href]:hover svg {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+.fsocial a.soon {
+  cursor: default; /* עוד אין כתובת: לא לחיץ */
+}
+
+/* ---------- קישורים משפטיים וזכויות ---------- */
+.flegal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  font-size: 13.5px;
+}
+.flegal a,
+.flegal button {
+  color: hsl(var(--muted));
+  padding: 0;
+  font-size: inherit;
+}
+.flegal a:hover,
+.flegal button:hover {
+  color: hsl(var(--text));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fcopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  padding: 22px 0 calc(env(safe-area-inset-bottom, 0px) + 28px);
+  font-size: 12.5px;
+  color: hsl(var(--muted));
+}
+.fcopy b {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: hsl(var(--text));
+}
+@media (max-width: 900px) {
+  .fcta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fgrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .fbrand {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 480px) {
+  .fgrid {
+    grid-template-columns: 1fr;
+  }
+  .fsocial a {
+    padding: 4px 18px;
+  }
+}

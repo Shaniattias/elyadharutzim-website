@@ -1,0 +1,152 @@
+/* =========================================================
+   טופס יצירת קשר
+   שתי עמודות במחשב, עמודה אחת בטלפון. שדות "full" תופסים את כל הרוחב.
+   ========================================================= */
+
+.cform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 32px;
+  max-width: 900px;
+}
+.cform .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.cform .field.full {
+  grid-column: 1 / -1;
+}
+.cform label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.cform .req {
+  color: hsl(var(--text));
+}
+
+/* שדות */
+.cform input,
+.cform select,
+.cform textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 15px;
+  color: hsl(var(--text));
+  background: hsl(var(--bg));
+  border: 1px solid hsl(var(--text) / 0.35);
+  border-radius: 6px;
+  padding: 13px 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.cform textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+.cform input::placeholder,
+.cform textarea::placeholder {
+  color: hsl(var(--muted) / 0.7);
+}
+.cform input:focus,
+.cform select:focus,
+.cform textarea:focus {
+  outline: none;
+  border-color: hsl(var(--text));
+  box-shadow: 0 0 0 3px hsl(var(--text) / 0.12);
+}
+
+/* חץ לתיבת הבחירה */
+.cform select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d1c1a' stroke-width='1.6'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-position: left 14px center;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+/* אייקון בתוך שדה המייל */
+.cform .with-icon {
+  position: relative;
+}
+.cform .with-icon svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: hsl(var(--muted));
+  stroke-width: 1.5;
+  pointer-events: none;
+}
+.cform .with-icon input {
+  padding-right: 42px;
+}
+
+/* שדה שגוי */
+.cform [aria-invalid='true'] {
+  border-color: #b3261e;
+}
+.cform .err {
+  font-size: 13px;
+  color: #b3261e;
+}
+
+/* מלכודת הרובוטים: מוסתרת מאנשים */
+.cform .hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.cform .fnote {
+  font-size: 13px;
+  line-height: 1.7;
+  color: hsl(var(--muted));
+}
+.cform .fnote a {
+  color: hsl(var(--text));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cform .actions {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+.cform button[disabled] {
+  opacity: 0.6;
+  cursor: wait;
+}
+.cform .fstatus {
+  font-size: 14px;
+}
+.cform .fstatus.ok {
+  color: #1e6b3a;
+}
+.cform .fstatus.bad {
+  color: #b3261e;
+}
+
+@media (max-width: 700px) {
+  .cform {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* רווח בין הטופס לכרטיסי יצירת הקשר שמתחתיו */
+#form + .sec {
+  padding-top: 0;
+}

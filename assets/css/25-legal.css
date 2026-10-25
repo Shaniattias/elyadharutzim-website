@@ -1,0 +1,127 @@
+/* =========================================================
+   עמודים משפטיים
+   תנאי שימוש, פרטיות, עוגיות והצהרת נגישות.
+   ========================================================= */
+
+/* ---------- legal documents ---------- */
+.legal {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+.toc {
+  position: sticky;
+  top: 110px;
+  font-size: 13.5px;
+}
+.toc b {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: hsl(var(--muted));
+  margin-bottom: 12px;
+}
+.toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-inline-start: 1px solid hsl(var(--stroke));
+}
+.toc a {
+  display: block;
+  padding: 7px 16px;
+  color: hsl(var(--muted));
+  line-height: 1.4;
+}
+.toc a:hover {
+  color: hsl(var(--text));
+}
+.prose {
+  max-width: 46rem;
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+.prose h2 {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 44px 0 12px;
+  scroll-margin-top: 110px;
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-weight: 400;
+  font-size: 17px;
+  margin: 26px 0 8px;
+}
+.prose p {
+  margin: 0 0 14px;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 16px;
+  padding-inline-start: 22px;
+}
+.prose li {
+  margin-bottom: 6px;
+}
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose strong {
+  font-weight: 700;
+}
+.prose .meta {
+  font-size: 13px;
+  color: hsl(var(--muted));
+  margin-bottom: 28px;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 20px;
+  font-size: 14px;
+}
+.prose th,
+.prose td {
+  text-align: start;
+  padding: 10px 12px;
+  border-bottom: 1px solid hsl(var(--stroke));
+  vertical-align: top;
+}
+.prose th {
+  font-weight: 400;
+  color: hsl(var(--muted));
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+}
+.prose .callout {
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: hsl(var(--surface) / 0.7);
+  margin: 0 0 18px;
+}
+@media (max-width: 900px) {
+  .legal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .toc {
+    position: static;
+  }
+  .toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border: 0;
+  }
+  .toc a {
+    border: 1px solid hsl(var(--stroke));
+    border-radius: 999px;
+    padding: 7px 14px;
+  }
+}

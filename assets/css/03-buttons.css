@@ -1,0 +1,35 @@
+/* =========================================================
+   כפתורים
+   כפתורי גלולה עם טבעת עדינה במעבר עכבר.
+   ========================================================= */
+
+/* ring buttons: gradient border on hover */
+.ring {
+  position: relative;
+  isolation: isolate;
+  border-radius: 999px;
+}
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--grad);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -2;
+}
+.ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+}
+.ring:hover::before,
+.ring:focus-visible::before {
+  opacity: 1;
+}

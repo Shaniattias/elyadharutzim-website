@@ -1,0 +1,28 @@
+/* =========================================================
+   קישורי קפיצה
+   קישורים לחלקים בתוך העמוד.
+   ========================================================= */
+
+/* ---------- jump-links row under hero (in-page navigation) ---------- */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 0;
+  list-style: none;
+}
+.jump a {
+  display: inline-block;
+  font-size: 13.5px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--stroke));
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+.jump a:hover {
+  border-color: hsl(var(--text) / 0.3);
+  background: hsl(var(--surface));
+}

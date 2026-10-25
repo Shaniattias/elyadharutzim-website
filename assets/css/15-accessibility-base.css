@@ -1,0 +1,40 @@
+/* =========================================================
+   נגישות בסיסית
+   קישור דילוג לתוכן, טקסט לקוראי מסך ומסגרת פוקוס.
+   ========================================================= */
+
+/* ================================================================
+   Multi-page site: navigation, page heroes, footer, legal pages,
+   cookie consent and accessibility menu
+   ================================================================ */
+.vh {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.skip {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10001;
+  background: #1d1c1a;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  transform: translateY(-200%);
+  transition: transform 0.2s;
+}
+.skip:focus {
+  transform: none;
+}
+main:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid #1d1c1a;
+  outline-offset: 3px;
+}

@@ -1,0 +1,367 @@
+/* =========================================================
+   תפריט נגישות
+   הכפתור הצף, חלונית הצד (בסגנון ווידג'טים מוכרים: כותרת שחורה, חלקים נפתחים
+   ואריחים עם אייקונים), וכל מצבי התצוגה שהתפריט מפעיל.
+   ========================================================= */
+
+/* ---------- הכפתור הצף ---------- */
+.a11y-btn {
+  position: fixed;
+  left: 18px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  z-index: 8999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #1d1c1a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+.a11y-btn:hover,
+.a11y-btn:focus-visible {
+  transform: scale(1.07);
+}
+.a11y-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+
+/* ---------- חלונית הצד ---------- */
+.a11y-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9001;
+  width: min(440px, 100vw);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.35);
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  letter-spacing: normal;
+}
+.a11y-panel[hidden] {
+  display: none;
+}
+
+/* כותרת שחורה */
+.a11y-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 30px;
+  background: #000;
+  color: #fff;
+}
+.a11y-top h2 {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 10px 34px;
+  background: #000;
+  border-radius: 0 0 22px 22px;
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.a11y-top h2::before {
+  content: '';
+  position: absolute;
+  inset: 6px 12px;
+  border: 2px solid #fff;
+  pointer-events: none;
+}
+.a11y-close {
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1;
+}
+.a11y-reset-top {
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* גוף החלונית: חלקים נפתחים */
+.a11y-body {
+  flex: 1;
+  overflow: auto;
+  padding: 34px 18px 18px;
+  overscroll-behavior: contain;
+}
+.a11y-sec + .a11y-sec {
+  margin-top: 18px;
+}
+.a11y-panel h3 {
+  margin: 0 0 12px;
+}
+.a11y-sec-t {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  text-align: start;
+}
+.a11y-sec-t i {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #000;
+  flex: none;
+}
+.a11y-sec-t i::before,
+.a11y-sec-t i::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 10px;
+  height: 2px;
+  background: #fff;
+}
+.a11y-sec.closed .a11y-sec-t i::after {
+  transform: rotate(90deg); /* "+" כשהחלק סגור, "−" כשפתוח */
+}
+
+/* אריחים */
+.a11y-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.a11y-grid[hidden] {
+  display: none;
+}
+.a11y-grid button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 104px;
+  padding: 12px 6px;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+.a11y-grid button:hover {
+  border-color: #000;
+}
+.a11y-grid button[aria-pressed='true'] {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+.a11y-grid svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.a11y-grid em {
+  font-style: normal;
+  font-weight: 700;
+}
+.a11y-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px calc(env(safe-area-inset-bottom, 0px) + 12px);
+  border-top: 1px solid #e3e3e3;
+  font-size: 13px;
+  color: #444;
+}
+.a11y-foot a {
+  color: #111;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 420px) {
+  .a11y-grid button {
+    min-height: 96px;
+    font-size: 13px;
+  }
+  .a11y-grid svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* accessibility modes */
+html.a11y-t1 :is(.sec, .phero, .site-foot, .legal-wrap, .ck, .a11y-panel, .mnav) {
+  zoom: 1.12;
+}
+html.a11y-t2 :is(.sec, .phero, .site-foot, .legal-wrap, .ck, .a11y-panel, .mnav) {
+  zoom: 1.25;
+}
+html.a11y-contrast {
+  --bg: 0 0% 100%;
+  --surface: 0 0% 96%;
+  --text: 0 0% 0%;
+  --muted: 0 0% 18%;
+  --stroke: 0 0% 55%;
+}
+html.a11y-contrast body {
+  background: #fff;
+  color: #000;
+}
+html.a11y-contrast :is(.eyebrow, .muted, .cinfo span, .wcap span) {
+  color: #222 !important;
+}
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+html.a11y-links a:focus,
+html.a11y-links button:focus {
+  outline: 3px solid #000 !important;
+  outline-offset: 3px;
+}
+html.a11y-font body,
+html.a11y-font * {
+  font-family: Arial, 'Helvetica Neue', sans-serif !important;
+  letter-spacing: normal !important;
+}
+html.a11y-still *,
+html.a11y-still *::before,
+html.a11y-still *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html.a11y-still .cur {
+  display: none !important;
+}
+html.a11y-still.cc,
+html.a11y-still.cc * {
+  cursor: auto !important;
+}
+html.a11y-still .loader {
+  display: none !important;
+}
+html.a11y-still .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* ---------- מצבים נוספים ---------- */
+
+/* ריווח טקסט: שורות, אותיות ומילים (לפי WCAG 1.4.12) */
+html.a11y-spacing :is(p, li, a, span, label, h1, h2, h3, h4, b, small, em, address, td, th) {
+  line-height: 1.9 !important;
+  letter-spacing: 0.08em !important;
+  word-spacing: 0.16em !important;
+}
+
+/* הדגשת כותרות */
+html.a11y-headings :is(h1, h2, h3, h4) {
+  outline: 2px dashed currentColor !important;
+  outline-offset: 6px;
+  background: hsl(48 100% 85% / 0.55) !important;
+}
+
+/* הסתרת תמונות (פחות הסחות דעת). הטקסט החלופי נשאר לקוראי מסך */
+html.a11y-noimg :is(main img, main video, main canvas, main figure, .wheel, .box) {
+  visibility: hidden !important;
+}
+
+/* סמן עכבר גדול (ומבטל את העיגול הרך) */
+html.a11y-cursor,
+html.a11y-cursor * {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l15 9-6.5 1.6L9.5 19z' fill='%23000' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E")
+      4 2,
+    auto !important;
+}
+html.a11y-cursor .cur {
+  display: none !important;
+}
+
+/* ניגודיות כהה: התמונות והסרטונים מוחזרים לצבע הטבעי (הפילטר עצמו מוחל מ-accessibility.js) */
+html.a11y-dark {
+  background: #000;
+}
+html.a11y-dark :is(img, video, canvas, .wheel, .box, .hw, .twh) {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* ניווט מקלדת: מסגרת מיקוד בולטת מאוד */
+html.a11y-kbd :focus {
+  outline: 4px solid #ffbf00 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 8px #000 !important;
+}
+
+/* הקראת טקסט: סימון מה שאפשר להקריא */
+html.a11y-tts :is(p, h1, h2, h3, h4, li, blockquote, label, figcaption, address, td, th):hover {
+  outline: 2px solid #1a5fd0;
+  outline-offset: 4px;
+  cursor: help;
+}
+
+/* מדריך קריאה: מחשיך את המסך מעל ומתחת לשורה שקוראים */
+.a11y-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 8998;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+.a11y-mask-top {
+  top: 0;
+}
+.a11y-mask-bottom {
+  bottom: 0;
+}
+
+/* יישור טקסט לתחילת השורה */
+html.a11y-align :is(p, li, h1, h2, h3, h4, .lead, .muted, span) {
+  text-align: start !important; /* ימין בעברית, שמאל בשפות אחרות */
+}
+
+@media print {
+  .nav,
+  .ck,
+  .a11y-btn,
+  .a11y-panel,
+  .cur,
+  #gl {
+    display: none !important;
+  }
+}

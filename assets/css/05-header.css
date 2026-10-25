@@ -1,0 +1,100 @@
+/* =========================================================
+   כותרת עליונה (בסיס)
+   הכותרת הצפה בצורת גלולה. פרטי התפריט בקובץ 20-menu.css.
+   ========================================================= */
+
+/* ---------- navbar ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px 0;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .nav {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 24px);
+  }
+}
+.pill {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: hsl(var(--surface) / 0.85);
+  padding: 8px;
+  transition: box-shadow 0.3s;
+}
+.pill.shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  transition: transform 0.3s;
+  margin-inline: 2px;
+}
+.logo:hover {
+  transform: scale(1.08);
+}
+.logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.div {
+  width: 1px;
+  height: 20px;
+  background: hsl(var(--stroke));
+  margin: 0 4px;
+}
+.nl {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: hsl(var(--muted));
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.nl:hover,
+.nl.active {
+  color: hsl(var(--text));
+  background: hsl(var(--stroke) / 0.5);
+}
+@media (min-width: 640px) {
+  .nl {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 639px) {
+  .div.hm {
+    display: none;
+  }
+  .nl[data-sec='group'],
+  .nl[data-sec='brands'],
+  .nl[data-sec='metals'] {
+    display: none;
+  }
+  .say b {
+    display: none;
+  }
+}
+.say {
+  background: hsl(var(--surface));
+}
+.say b {
+  font-weight: 400;
+}

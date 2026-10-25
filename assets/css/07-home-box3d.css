@@ -1,0 +1,45 @@
+/* =========================================================
+   דף הבית: קרטון תלת־ממדי
+   משטח הציור של הקרטון (three.js).
+   ========================================================= */
+
+/* ---------- 3D box ---------- */
+#gl {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  pointer-events: none;
+}
+.anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+#services .wrap,
+#tips .wrap {
+  position: relative;
+}
+#a1 {
+  left: 16%;
+  top: 30px;
+}
+@media (max-width: 767px) {
+  #a1 {
+    left: 50%;
+    top: -62px;
+  }
+}
+.sh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 180px;
+  height: 26px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.75), transparent);
+  opacity: 0;
+}

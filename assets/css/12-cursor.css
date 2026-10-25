@@ -1,0 +1,49 @@
+/* =========================================================
+   סמן עכבר
+   העיגול הרך שמחליף את העכבר במחשב.
+   ========================================================= */
+
+/* ---------- custom cursor: soft translucent circle ---------- */
+@media (hover: hover) and (pointer: fine) {
+  html.cc,
+  html.cc * {
+    cursor: none !important;
+  }
+}
+.cur {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  background: rgba(245, 245, 245, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  transition:
+    width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    margin 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.3s,
+    border-color 0.3s,
+    opacity 0.3s;
+  opacity: 0;
+  will-change: transform;
+}
+.cur.on {
+  opacity: 1;
+}
+.cur.big {
+  width: 70px;
+  height: 70px;
+  margin: -35px 0 0 -35px;
+  background: rgba(29, 28, 26, 0.16);
+  border-color: rgba(138, 129, 120, 0.6);
+}
+.cur.down {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+}

@@ -1,0 +1,122 @@
+/* =========================================================
+   שפות
+   1. כפתור בחירת השפה בכותרת (גלובוס) והרשימה שנפתחת ממנו.
+   2. שורת השפות בתפריט הטלפון.
+   3. התאמות לשפות שנכתבות משמאל לימין (אנגלית, צרפתית, גרמנית, ספרדית).
+   ========================================================= */
+
+/* ---------- 1. כפתור השפה בכותרת ---------- */
+.lang {
+  position: relative;
+}
+.lang-t {
+  gap: 6px;
+}
+.lang-t svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.lang-t span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.lang-m {
+  position: absolute;
+  top: calc(100% + 14px);
+  inset-inline-end: 0;
+  min-width: 170px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border-radius: 18px;
+  background: hsl(var(--bg));
+  border: 1px solid hsl(var(--text) / 0.08);
+  box-shadow: 0 24px 60px -24px rgba(29, 28, 26, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0.2s;
+  z-index: 60;
+}
+.lang.open .lang-m {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.lang-m a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.lang-m a:hover,
+.lang-m a:focus-visible {
+  background: hsl(var(--text) / 0.05);
+}
+.lang-m a[aria-current='true'] {
+  font-weight: 700;
+}
+.lang-m a[aria-current='true']::after {
+  content: ' ✓';
+}
+
+/* ---------- 2. שורת השפות בתפריט הטלפון ---------- */
+.mnav .mlang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 26px 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid hsl(var(--stroke));
+}
+.mnav .mlang a {
+  display: inline-flex;
+  padding: 8px 14px;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 999px;
+  font-size: 14px;
+}
+.mnav .mlang a[aria-current='true'] {
+  background: #1d1c1a;
+  color: #fff;
+  border-color: #1d1c1a;
+}
+
+/* ---------- 3. שפות משמאל לימין ---------- */
+/* גופן: Open Sans מלא (כולל é, ü, ñ, ß), ואז Open Sans Hebrew כגיבוי */
+html[dir='ltr'] {
+  --font-body: 'Open Sans', 'Open Sans Hebrew', system-ui, sans-serif;
+  --font-display: 'Open Sans', 'Open Sans Hebrew', system-ui, sans-serif;
+}
+/* החץ בכרטיסי "המשך גלישה" מצביע קדימה (ימינה) */
+html[dir='ltr'] .xcard em::after {
+  content: '→';
+}
+@media (hover: hover) {
+  html[dir='ltr'] .xcard:hover em::after {
+    transform: translateX(4px);
+  }
+}
+
+/* טופס יצירת קשר: החץ של תיבת הבחירה והאייקון של שדה המייל עוברים לצד השני */
+html[dir='ltr'] .cform select {
+  background-position: right 14px center;
+  padding-left: 14px;
+  padding-right: 40px;
+}
+html[dir='ltr'] .cform .with-icon svg {
+  right: auto;
+  left: 14px;
+}
+html[dir='ltr'] .cform .with-icon input {
+  padding-right: 14px;
+  padding-left: 42px;
+}

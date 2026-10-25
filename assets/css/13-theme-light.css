@@ -1,0 +1,441 @@
+/* =========================================================
+   עיצוב בהיר
+   המראה הבהיר והשקט של האתר (בהשראת rhode). שכבה מעל הקבצים הקודמים.
+   ========================================================= */
+
+/* ================= light, quiet theme (inspired by rhode) ================= */
+body {
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+::selection {
+  background: #1d1c1a;
+  color: #f5f2ee;
+}
+.display {
+  font-style: normal;
+  font-weight: 300;
+  color: inherit;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: hsl(var(--muted));
+  font-weight: 400;
+}
+.head .eyebrow::before,
+.cap .eyebrow::before {
+  width: 24px;
+  background: hsl(var(--text) / 0.25);
+}
+.head h2 {
+  font-weight: 300;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+.head p,
+.cap p,
+.rcap p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: hsl(var(--muted));
+}
+.cap h2,
+.rcap h2 {
+  font-weight: 300;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.2;
+}
+
+.btn {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 13px 26px;
+}
+.btn:hover {
+  transform: none;
+  opacity: 0.85;
+}
+.ring::before {
+  display: none;
+}
+/* nav: soft, quiet */
+.pill {
+  background: hsl(var(--bg) / 0.82);
+  border: 1px solid hsl(var(--text) / 0.07);
+  box-shadow: none;
+}
+.pill.shadow {
+  box-shadow: 0 6px 24px -12px rgba(0, 0, 0, 0.18);
+}
+.nl {
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+.nl:hover,
+.nl.active {
+  background: hsl(var(--text) / 0.05);
+}
+/* loader */
+.loader .word b {
+  font-weight: 300;
+}
+.loader .count {
+  font-weight: 300;
+}
+.loader .word small {
+  color: hsl(var(--muted));
+  letter-spacing: 0.2em;
+  font-size: 13px;
+}
+/* opening video */
+.gside .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.35em;
+}
+.gside h1 {
+  font-weight: 300;
+  font-size: clamp(28px, 3.4vw, 50px);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+}
+.gside p {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.8);
+}
+.gcue {
+  color: rgba(255, 255, 255, 0.75);
+}
+.gcue .ln {
+  background: rgba(255, 255, 255, 0.3);
+}
+.gcue .ln i {
+  background: #fff;
+}
+@media (max-width: 767px) {
+  .gside h1 {
+    font-size: 28px;
+  }
+  .gside p {
+    font-size: 11px;
+  }
+}
+/* machines stage on the light page */
+.gpin {
+  background: hsl(var(--bg));
+}
+.sfloor {
+  display: none;
+}
+.wfloor {
+  left: 22%;
+  right: 6%;
+  bottom: -2%;
+  height: 9%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+.whead h2 {
+  font-weight: 300;
+  font-size: clamp(24px, 2.8vw, 38px);
+}
+.wcap b {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: hsl(var(--text));
+}
+.wcap b::after,
+.wst figcaption b::after,
+.mcard h3::after {
+  display: none;
+}
+.wcap span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: hsl(var(--muted));
+}
+.speedo {
+  color: hsl(var(--muted));
+}
+.speedo b {
+  color: hsl(var(--text));
+}
+.gcover {
+  background: hsl(var(--surface));
+  border-top: 1px solid hsl(var(--stroke));
+  box-shadow: none;
+}
+.gcover span {
+  border-color: hsl(var(--text) / 0.15);
+}
+/* truck scroll scene */
+/* the truck section looks exactly like the end of the opening story (same plain background, same soft shadow) */
+.pin {
+  background: hsl(var(--bg));
+}
+.floor {
+  display: none;
+}
+#rig .tshd {
+  z-index: 0;
+}
+.lines i {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0));
+}
+.prog {
+  background: hsl(var(--text) / 0.6) !important;
+  box-shadow: none;
+}
+/* 3D box */
+.rglow {
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.04), transparent 72%);
+}
+/* cards & sections */
+.card {
+  border-color: hsl(var(--stroke));
+}
+.card:hover,
+.card:focus-visible {
+  border-color: hsl(var(--text) / 0.25);
+  box-shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.25);
+}
+
+.cinfo b {
+  font-weight: 400;
+}
+
+.pw-mono {
+  filter: brightness(0) opacity(0.55);
+}
+.way {
+  background: hsl(var(--bg));
+  border-color: hsl(var(--stroke));
+}
+.way:hover {
+  border-color: hsl(var(--text) / 0.25);
+}
+.wn {
+  color: hsl(var(--text));
+  font-weight: 300;
+}
+.way h3 {
+  font-weight: 400;
+}
+.wmeta {
+  color: hsl(var(--muted));
+}
+.wmeta span {
+  color: hsl(var(--text));
+}
+.wchip {
+  border-color: hsl(var(--text) / 0.15);
+  color: hsl(var(--muted));
+}
+.incl {
+  background: hsl(var(--surface) / 0.6);
+}
+.incl > b {
+  color: hsl(var(--text));
+  font-weight: 400;
+}
+.incl svg {
+  stroke: hsl(var(--text));
+}
+
+.st {
+  border-color: hsl(var(--stroke));
+}
+.st.on {
+  background: hsl(var(--text));
+  border-color: hsl(var(--text));
+  color: hsl(var(--bg));
+}
+.tl b,
+.tl2 b {
+  color: hsl(var(--muted));
+  font-weight: 300;
+}
+.tl .now b,
+.tl2 .now b {
+  color: hsl(var(--text));
+}
+.tl2::after {
+  background: hsl(var(--text));
+  box-shadow: none;
+}
+.tl2 .dot {
+  border-color: hsl(var(--text));
+}
+.tl2 .now .dot {
+  background: hsl(var(--text));
+  box-shadow: 0 0 0 6px hsl(var(--text) / 0.08);
+}
+.owners i,
+.subhead {
+  color: hsl(var(--muted));
+}
+/* metals */
+.mbg {
+  opacity: 0.12;
+}
+.metals::after {
+  display: none;
+}
+.el {
+  border-color: hsl(var(--text) / 0.1);
+  background: hsl(var(--bg) / 0.7);
+}
+.el b {
+  color: hsl(var(--text));
+  font-weight: 300;
+}
+.el span {
+  color: hsl(var(--muted));
+}
+.el:hover {
+  border-color: hsl(var(--text) / 0.3);
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.25);
+}
+
+.mcard {
+  background: hsl(var(--bg) / 0.85);
+  border-color: hsl(var(--stroke));
+}
+.mcard:hover {
+  border-color: hsl(var(--text) / 0.25);
+}
+.mcard h3 {
+  color: hsl(var(--text));
+  font-weight: 400;
+}
+.mcard p {
+  color: hsl(var(--muted));
+}
+.mnum {
+  color: hsl(var(--muted));
+}
+.mcard svg {
+  stroke: hsl(var(--text));
+}
+.opp {
+  background: hsl(var(--bg) / 0.85);
+  border-color: hsl(var(--stroke));
+}
+.opp > div {
+  border-color: hsl(var(--stroke));
+}
+.opp b {
+  color: hsl(var(--text));
+  font-weight: 300;
+}
+.opp span {
+  color: hsl(var(--muted));
+}
+.oppsrc {
+  color: hsl(var(--muted));
+}
+/* about */
+.band {
+  background: hsl(var(--surface) / 0.5);
+}
+.band .stat b {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: hsl(var(--text));
+  font-weight: 300;
+}
+.stat b {
+  font-weight: 300;
+}
+.dcard:hover {
+  border-color: hsl(var(--text) / 0.25);
+}
+.dcard svg {
+  stroke: hsl(var(--text));
+  background: hsl(var(--text) / 0.05);
+}
+.ocard {
+  background: hsl(var(--bg));
+  border-color: hsl(var(--stroke));
+}
+.ocard:hover {
+  border-color: hsl(var(--text) / 0.25);
+}
+.ocard h3 {
+  color: hsl(var(--text));
+  font-weight: 400;
+}
+.ocard i {
+  color: hsl(var(--muted));
+}
+.ocard p {
+  color: hsl(var(--muted));
+}
+.ocard p::before {
+  background: hsl(var(--text) / 0.4);
+}
+
+/* contact */
+
+/* cursor */
+.cur {
+  background: rgba(29, 28, 26, 0.08);
+  border-color: rgba(29, 28, 26, 0.35);
+}
+.cur.big {
+  background: rgba(29, 28, 26, 0.08);
+  border-color: rgba(29, 28, 26, 0.45);
+}
+:focus-visible {
+  outline-color: hsl(var(--text));
+}
+/* a light touch of peach — only a few accents */
+:root {
+  --peach: #f29c6c;
+}
+::selection {
+  background: var(--peach);
+  color: #1d1c1a;
+}
+.nl.active {
+  position: relative;
+}
+.nl.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--peach);
+}
+.tl2 .now .dot {
+  background: var(--peach);
+  border-color: var(--peach);
+  box-shadow: 0 0 0 6px rgba(242, 156, 108, 0.18);
+}
+.cur.big {
+  background: rgba(242, 156, 108, 0.16);
+  border-color: rgba(242, 156, 108, 0.7);
+}
+.speedo,
+#tspd,
+.gcover,
+.tcov {
+  display: none !important;
+}
+#stScene > #mStk {
+  z-index: 1;
+}
+#stScene > .trk {
+  z-index: 2;
+}

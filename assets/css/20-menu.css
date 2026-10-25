@@ -1,0 +1,220 @@
+/* =========================================================
+   תפריט ראשי
+   תפריטים נפתחים במחשב ותפריט צד בטלפון.
+   ========================================================= */
+
+/* ---------- header / main menu ---------- */
+.pill {
+  gap: 2px;
+}
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.menu > li {
+  position: relative;
+}
+.nl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1.2;
+}
+button.nl {
+  cursor: pointer;
+}
+.nl[aria-current='page'] {
+  color: hsl(var(--text));
+  background: hsl(var(--text) / 0.05);
+}
+.chev {
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.25s;
+  flex: none;
+}
+.sub-t[aria-expanded='true'] .chev {
+  transform: translateY(1px) rotate(-135deg);
+}
+.sub {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 50%;
+  transform: translate(50%, 6px);
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  background: hsl(var(--bg));
+  border: 1px solid hsl(var(--text) / 0.08);
+  box-shadow: 0 24px 60px -24px rgba(29, 28, 26, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0.2s;
+  z-index: 60;
+}
+.sub::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+.has-sub.open .sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(50%, 0);
+}
+.sub a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 14px;
+  transition: background 0.2s;
+}
+.sub a:hover,
+.sub a:focus-visible {
+  background: hsl(var(--text) / 0.05);
+}
+.sub a b {
+  display: block;
+  font-weight: 400;
+  font-size: 14.5px;
+  color: hsl(var(--text));
+}
+.sub a small {
+  display: block;
+  font-size: 12.5px;
+  color: hsl(var(--muted));
+  margin-top: 2px;
+  line-height: 1.45;
+}
+.sub a[aria-current='page'] b::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--peach, #f29c6c);
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}
+.burger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.burger i {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: hsl(var(--text));
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.burger[aria-expanded='true'] i:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.burger[aria-expanded='true'] i:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded='true'] i:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+.mnav {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: hsl(var(--bg));
+  padding: calc(env(safe-area-inset-top, 0px) + 96px) 24px 40px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s,
+    visibility 0.25s;
+}
+.mnav.open {
+  opacity: 1;
+  visibility: visible;
+}
+.mnav h2 {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: hsl(var(--muted));
+  font-weight: 400;
+  margin: 22px 0 6px;
+}
+.mnav a {
+  display: block;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: 300;
+  border-bottom: 1px solid hsl(var(--stroke));
+}
+.mnav a[aria-current='page'] {
+  font-weight: 400;
+}
+.mnav a[aria-current='page']::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--peach, #f29c6c);
+  margin-inline-end: 10px;
+  vertical-align: middle;
+}
+.mnav .mcta {
+  margin-top: 28px;
+  display: inline-flex;
+  border: 0;
+  background: #1d1c1a;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 26px;
+  border-radius: 999px;
+}
+@media (max-width: 899px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+  .say {
+    margin-inline-start: auto;
+  }
+  .pill {
+    width: min(560px, calc(100vw - 32px));
+    justify-content: space-between;
+  }
+}
+@media (max-width: 639px) {
+  .say {
+    display: inline-flex !important;
+  }
+}
+
+/* כשתפריט הטלפון פתוח, כפתור הנגישות לא מכסה אותו */
+body.menu-open .a11y-btn {
+  display: none;
+}
