@@ -1,0 +1,38 @@
+{
+  "_about": "פרטי החברה, התפריט וכרטיסי ההמשך. שינוי כאן מתעדכן בכל העמודים אחרי הרצת build.py.",
+
+  "company": {
+    "name": "אל יד חרוצים בע\"מ",
+    "name_en": "El Yad Harutzim Ltd",
+    "hp": "516998119",
+    "phone": "08-867-6852",
+    "tel": "+97288676852",
+    "email": "info@elyadharutzim.com",
+    "gmail": "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@elyadharutzim.com",
+    "address": "רחוב צה\"ל 4, קומה 22, אשדוד",
+    "street": "רחוב צה\"ל 4, קומה 22",
+    "city": "אשדוד",
+    "maps": "https://maps.google.com/?q=%D7%A6%D7%94%22%D7%9C+4+%D7%90%D7%A9%D7%93%D7%95%D7%93",
+    "domain": "https://elyadharutzim.com",
+    "share_image": "assets/img/photos/port-ashdod.webp",
+    "updated": "25 באוקטובר 2026",
+    "updated_iso": "2026-10-25",
+    "year": "2026"
+  },
+
+  "_menu": "התפריט הראשי: כתובת וכותרת. also = עמודים נוספים שבהם הפריט מסומן כפעיל. אפשר גם תפריט נפתח עם items (רשימה של [כתובת, כותרת, תיאור קצר]).",
+  "menu": [
+    { "href": "index.html", "label": "בית" },
+    { "href": "about.html", "label": "מי אנחנו" },
+    { "href": "trade.html", "label": "תחומי פעילות", "also": ["brands.html", "food.html", "steel.html", "mining.html"] },
+    { "href": "buy.html", "label": "איך רוכשים" }
+  ],
+
+  "_explore": "הכרטיסים \"עוד באל יד חרוצים\" בתחתית העמודים: [כתובת, כותרת, תיאור, טקסט הקישור].",
+  "explore": [
+    ["about.html", "מי אנחנו", "הבעלים, החזון והדרך מ־2022 ועד היום.", "אודות החברה"],
+    ["trade.html", "תחומי פעילות", "מוצרי צריכה, מזון, פלדה וכרייה, בעמוד אחד.", "לכל התחומים"],
+    ["mining.html", "כרייה ומשאבים", "כרייה, שיקום מתכות ירוק ומסחר פיזי במתכות.", "לתחום הכרייה"],
+    ["buy.html", "איך רוכשים", "עסקאות טרום־הגעה או אספקה ממחסן הנמל.", "לדרכי הרכישה"]
+  ]
+}
