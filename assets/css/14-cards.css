@@ -148,3 +148,41 @@
     aspect-ratio: 1/1;
   }
 }
+
+/* קישור לינקדאין בכרטיס של בעלים */
+.olink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  padding: 6px 12px 6px 14px;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 999px;
+  font-size: 13px;
+  color: hsl(var(--text));
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.olink svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex: none;
+}
+.olink:hover,
+.olink:focus-visible {
+  border-color: hsl(var(--text) / 0.4);
+  background: hsl(var(--surface));
+}
+@media (max-width: 767px) {
+  .olink {
+    margin-top: 8px;
+    padding: 4px 9px;
+    font-size: 11.5px;
+  }
+  .olink svg {
+    width: 13px;
+    height: 13px;
+  }
+}
