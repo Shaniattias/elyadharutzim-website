@@ -8,7 +8,7 @@
      facebook: 'https://www.facebook.com/elyadharutzim'
    אייקון בלי כתובת מוצג, אבל לא לחיץ, עד שמוסיפים כתובת. */
 window.EY_SOCIAL = {
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/elyad-harutzim-7719b1445/',
   facebook: '',
   instagram: ''
 };
