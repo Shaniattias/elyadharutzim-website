@@ -185,7 +185,7 @@
     scap.style.top = g0 + 14 + 'px';
     R0 = null;
   }
-  addEventListener('resize', function () {
+  EYonResize(function () {
     layout();
     req();
   });

@@ -17,7 +17,7 @@
   function f() {
     raf = 0;
     var sr = sec.getBoundingClientRect(),
-      vh = Math.max(1, innerHeight),
+      vh = Math.max(1, EYvh()),
       pxs = Math.max(0, -sr.top),
       sp = Math.min(1, pxs / (1.6 * vh));
     var fade = cl((sp - 0.18) / 0.27),
@@ -54,6 +54,6 @@
     { threshold: 0 }
   ).observe(sec);
   addEventListener('scroll', req, { passive: true });
-  addEventListener('resize', req);
+  EYonResize(req);
   req();
 })();

@@ -257,7 +257,7 @@
     dirty = true;
   function resize() {
     vw = innerWidth;
-    vh = innerHeight;
+    vh = EYvh();
     renderer.setSize(vw, vh, false);
     camera.aspect = vw / vh;
     camera.updateProjectionMatrix();
@@ -283,11 +283,11 @@
   }
 
   function update() {
-    var span = flow.offsetHeight - innerHeight,
+    var span = flow.offsetHeight - EYvh(),
       pinEnd = flow.offsetTop + span;
     var p = cl((scrollY - flow.offsetTop) / span);
     var rS = rev.offsetTop,
-      rE = rev.offsetTop + rev.offsetHeight - innerHeight,
+      rE = rev.offsetTop + rev.offsetHeight - EYvh(),
       r = cl((scrollY - rS) / (rE - rS));
     rcap.classList.toggle('on', scrollY >= rS && r >= 0.12 && r < 0.99);
     if (p < 0.83 && scrollY <= pinEnd) {
@@ -397,7 +397,7 @@
     }
   }
   addEventListener('scroll', req, { passive: true });
-  addEventListener('resize', function () {
+  EYonResize(function () {
     resize();
     req();
   });

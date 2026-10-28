@@ -94,7 +94,7 @@
   }
   function frame() {
     var r = flow.getBoundingClientRect(),
-      span = flow.offsetHeight - innerHeight - HANDOFF;
+      span = flow.offsetHeight - EYvh() - HANDOFF;
     // eased exactly like the opening story, so the motion feels the same on both sides of the hand-off
     var pT = cl((-r.top - HANDOFF) / span),
       now = performance.now(),
@@ -243,11 +243,11 @@
       frame();
       return;
     }
-    if (r0.top > innerHeight * 0.55) {
+    if (r0.top > EYvh() * 0.55) {
       // wait until the truck section is on screen
       var io = new IntersectionObserver(
         function (es) {
-          if (es[0].intersectionRatio > 0 && flow.getBoundingClientRect().top < innerHeight * 0.55) {
+          if (es[0].intersectionRatio > 0 && flow.getBoundingClientRect().top < EYvh() * 0.55) {
             io.disconnect();
             drive();
           }
@@ -258,7 +258,7 @@
       addEventListener(
         'scroll',
         function chk() {
-          if (!driveStarted && flow.getBoundingClientRect().top < innerHeight * 0.55) {
+          if (!driveStarted && flow.getBoundingClientRect().top < EYvh() * 0.55) {
             removeEventListener('scroll', chk);
             drive();
           }
@@ -437,7 +437,7 @@
     }
   }
   addEventListener('scroll', req, { passive: true });
-  addEventListener('resize', function () {
+  EYonResize(function () {
     size();
     req();
   });
