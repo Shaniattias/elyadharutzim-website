@@ -86,6 +86,7 @@
       panel.setAttribute('inert', ''); // סגור: לא ניתן להגיע אליו במקלדת
     }
     d.body.style.overflow = open ? 'hidden' : ''; // בלי גלילה מאחורי התפריט
+    d.documentElement.style.overflow = open ? 'hidden' : ''; // אייפון מתעלם מ-overflow על body
     d.body.classList.toggle('menu-open', open); // מסתיר את כפתור הנגישות מעל התפריט
   }
 
