@@ -147,42 +147,32 @@
       g0;
     // centre the opening block (heading + machines + captions) vertically, like the original layout
     whead.style.top = '';
+    // the two machines always stand side by side (on phones too), so their captions share one row
     var hh = whead.offsetHeight,
-      cwA = mob ? W * 0.88 : (W * 0.91) / 2,
-      blk = mob
-        ? hh + 10 + cwA / 2 + 64 + (G.GND - G.TOP) * (cwA / span) + 60
-        : hh + 28 + cwA * 0.06 + cwA / 2 + 70;
+      cwA = mob ? W * 0.47 : (W * 0.91) / 2,
+      blk = hh + (mob ? 16 : 28) + cwA * 0.06 + cwA / 2 + (mob ? 90 : 70);
     whead.style.top = Math.max(whead.offsetTop, (H - blk) / 2 + (mob ? 30 : 20)) + 'px';
     var hb = whead.offsetTop + whead.offsetHeight;
-    if (!mob) {
-      var cw = (W * 0.91) / 2,
-        dx = W * 0.97 - cw,
-        dt = hb + 28 + cw * 0.06,
-        dh = cw / 2;
-      dwrap.style.left = dx + 'px';
-      dwrap.style.top = dt + 'px';
-      dwrap.style.width = cw + 'px';
-      g0 = dt + (dh * G.GND) / IH;
-      u0 = Math.min((cw * 0.96) / span, (g0 - hb - 16) / (G.GND - G.TOP));
-      l0 = W * 0.03 + (cw - span * u0) / 2 - G.COMP[0] * u0;
-    } else {
-      var cw2 = W * 0.88,
-        dt2 = hb + 10,
-        dh2 = cw2 / 2;
-      dwrap.style.left = W * 0.06 + 'px';
-      dwrap.style.top = dt2 + 'px';
-      dwrap.style.width = cw2 + 'px';
-      u0 = cw2 / span;
-      g0 = dt2 + dh2 + 64 + (G.GND - G.TOP) * u0;
-      l0 = W * 0.06 + (cw2 - span * u0) / 2 - G.COMP[0] * u0;
-    }
+    var cw = cwA,
+      side = mob ? W * 0.02 : W * 0.03,
+      dx = W - side - cw,
+      dt = hb + (mob ? 16 : 28) + cw * 0.06,
+      dh = cw / 2;
+    dwrap.style.left = dx + 'px';
+    dwrap.style.top = dt + 'px';
+    dwrap.style.width = cw + 'px';
+    g0 = dt + (dh * G.GND) / IH;
+    u0 = Math.min((cw * 0.96) / span, (g0 - hb - 16) / (G.GND - G.TOP));
+    l0 = side + (cw - span * u0) / 2 - G.COMP[0] * u0;
     t0 = g0 - G.GND * u0;
     var k = u0 / u;
     L.k = k;
     L.ax = l0 - st.left * k;
     L.ay = t0 - st.top * k;
     scap.style.left = l0 + ((G.COMP[0] + G.COMP[1]) / 2) * u0 + 'px';
-    scap.style.top = g0 + 14 + 'px';
+    // same row as the drill caption: right under the drill picture (dwrap .mach is cw/2 tall)
+    scap.style.top = dt + dh + (mob ? 4 : 14) + 'px';
+    scap.style.width = mob ? cw + 'px' : '';
     R0 = null;
   }
   EYonResize(function () {
