@@ -32,7 +32,7 @@
 .cform textarea {
   width: 100%;
   font: inherit;
-  font-size: 15px;
+  font-size: 16px; /* 16px ומעלה: אחרת אייפון מגדיל את המסך כשלוחצים על שדה */
   color: hsl(var(--text));
   background: hsl(var(--bg));
   border: 1px solid hsl(var(--text) / 0.35);
