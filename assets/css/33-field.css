@@ -1,0 +1,153 @@
+/* =========================================================
+   מהשטח (עמוד הכרייה)
+   ארבעה פרקים עם טקסט ופסיפס של תמונות וסרטונים אמיתיים מהאתרים.
+   במחשב: הטקסט בצד אחד והפסיפס בצד השני, ובכל פרק מתחלפים הצדדים.
+   ========================================================= */
+
+.field .head {
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.chap {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 48px) 0;
+  border-top: 1px solid hsl(var(--stroke));
+}
+/* פרק זוגי: הפסיפס עובר לצד השני */
+.chap:nth-of-type(even) .chap-t {
+  order: 2;
+}
+.chap-n {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1;
+  color: hsl(var(--text) / 0.5); /* ניגודיות 3:1 לפחות (ת"י 5568) */
+  margin-bottom: 14px;
+}
+.chap-t h3 {
+  font-weight: 400;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.chap-t p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: hsl(var(--muted));
+  max-width: 30rem;
+}
+
+/* ---------- פסיפס ---------- */
+.mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: clamp(150px, 15vw, 230px);
+  gap: 12px;
+}
+.tile {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: hsl(var(--surface));
+}
+.tile.big {
+  grid-row: span 2;
+}
+.tile.wide {
+  grid-column: 1 / -1;
+}
+.mosaic.m2 .tile {
+  grid-row: span 2;
+}
+.tile img,
+.tile video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+/* מיקוד החיתוך בכל תמונה, כדי שהאנשים והציוד יישארו בתמונה */
+.tile img[src*='site-meeting'] {
+  object-position: 50% 45%;
+}
+.tile img[src*='tailings-mound'] {
+  object-position: 50% 52%;
+}
+.tile img[src*='plant-tanks'] {
+  object-position: 50% 55%;
+}
+.tile img[src*='plant-inspection'] {
+  object-position: 50% 62%;
+}
+.tile img[src*='red-soil-check'] {
+  object-position: 50% 40%;
+}
+.tile img[src*='raw-gold'],
+.tile img[src*='bars-scale'] {
+  object-position: 50% 60%;
+}
+.phero figure img[src*='team-walk-plant'] {
+  object-position: 50% 62%;
+}
+.tile figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 36px 14px 12px;
+  font-size: 13px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.7), transparent);
+  pointer-events: none;
+}
+.vbadge {
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(10, 10, 10, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+@media (hover: hover) {
+  .tile:hover img,
+  .tile:hover video {
+    transform: scale(1.04);
+  }
+}
+
+/* ---------- טלפון ---------- */
+@media (max-width: 767px) {
+  .chap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 0;
+  }
+  .chap:nth-of-type(even) .chap-t {
+    order: 0;
+  }
+  .chap-n {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+  .mosaic {
+    grid-auto-rows: 132px;
+    gap: 8px;
+  }
+  .tile {
+    border-radius: 14px;
+  }
+  .tile figcaption {
+    font-size: 11.5px;
+    padding: 28px 10px 8px;
+  }
+}
