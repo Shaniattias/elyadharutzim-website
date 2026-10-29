@@ -78,6 +78,7 @@ SITE_SCRIPTS = [
     'assets/js/site/cursor.js',
     'assets/js/site/way-cards.js',
     'assets/js/site/page-transitions.js',
+    'assets/js/site/field-videos.js',
     'assets/js/site/brand-wall.js',
     'assets/js/site/contact-form.js',
 ]
