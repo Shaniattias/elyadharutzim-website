@@ -234,7 +234,7 @@ h1,h2,h3{overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto}
   .nav,.hcta{display:none}.burger{display:block}
   .hero{grid-template-columns:1fr}
   .hero-v{position:absolute;inset:0}
-  .hero-v::after{background:linear-gradient(to top,var(--night) 10%,rgba(20,42,76,.6) 55%,rgba(20,42,76,.25))}
+  .hero-v::after,[dir=ltr] .hero-v::after{background:linear-gradient(to top,var(--night) 28%,rgba(20,42,76,.84) 58%,rgba(20,42,76,.5))}
   .hero .mono{display:none}
   .hero-t{min-height:100svh}
   .panel,.trade{grid-template-columns:minmax(0,1fr);min-height:0}
@@ -312,7 +312,7 @@ h1,h2,h3{overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto}
     </div>
   </div>
   <div class="hero-v">
-    <video id="hv" src="video/hilltop-facility.mp4" poster="img/hilltop-facility-poster.webp" muted loop playsinline autoplay preload="auto" aria-label="סרטון: מתקן עיבוד על ראש גבעה מעל יער"></video>
+    <video id="hv" src="video/hero-field.mp4" poster="img/hero-field-poster.webp" muted loop playsinline autoplay preload="auto" aria-label="סרטון: צילומי רחפן של ערמות חומר כרייה בין שדות"></video>
     <button class="vctl" id="vctl" type="button" aria-label="עצירת הסרטון"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg></button>
   </div>
 </section>
