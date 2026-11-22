@@ -1,32 +1,32 @@
 <!--
-  title: אל יד חרוצים בע"מ · מסחר, כרייה ומיחזור
-  description: אל יד חרוצים בע"מ מאשדוד: יבוא והפצה סיטונאית של מותגים גלובליים, כרייה ופיתוח מכרות ומסחר פיזי במתכות, ב־18 מדינות.
+  title: אל יד חרוצים בע"מ · כרייה, מיחזור מתכות ומסחר
+  description: אל יד חרוצים בע"מ: כרייה ופיתוח מכרות, השבת מתכות ירוקה מזנבות ומסחר פיזי במתכות, ב־18 מדינות. וגם יבוא והפצה מאשדוד.
   explore: all
-  scripts: assets/js/home/viewport.js , assets/js/home/story-geometry.js , https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js , assets/js/home/home.js , https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js , assets/js/home/box-3d.js , assets/js/home/opening.js , assets/js/home/loading-story.js
+  scripts: assets/js/home/viewport.js , assets/js/home/story-geometry.js , assets/js/home/home.js , assets/js/home/opening.js , assets/js/home/loading-story.js
   layout: home
 -->
 
-<!-- ============ 1. פתיחה: סרטון מסך מלא, ואז סיפור המכונות (קידוח, מנוף שמעמיס מכולה על משאית) ============
+<!-- ============ 1. פתיחה: סרטון מסך מלא, ואז סיפור המכונות (קידוח, ומנוף שמעמיס מכולה על משאית) ============
      הסקריפטים: assets/js/home/opening.js ו-loading-story.js -->
 <section class="globe" id="home" aria-label="אל יד חרוצים: הכל בחברה אחת">
   <div class="gpin" id="gpin">
-  <div class="hvid" id="hvid"><video id="hv" src="assets/video/opening.mp4" muted loop playsinline autoplay preload="auto" aria-label="נמל, כרייה ומיחזור מתכות"></video></div>
+  <div class="hvid" id="hvid"><video id="hv" src="assets/video/opening.mp4" poster="assets/img/photos/opening-poster.webp" muted loop playsinline autoplay preload="auto" aria-label="נמל, כרייה ומיחזור מתכות"></video></div>
   <div class="gside">
     <div class="eyebrow">אל יד חרוצים בע"מ</div>
     <h1>הכל בחברה אחת</h1>
-    <p>מסחר · כרייה · מיחזור</p>
+    <p>כרייה · מיחזור מתכות · מסחר</p>
   </div>
   <div class="gcue"><span>גללו</span><span class="ln"><i></i></span></div>
   <div class="works" id="works" aria-label="מעמיס מכולות מעמיס מכולה של אל יד חרוצים על משאית">
     <div class="sfloor" aria-hidden="true"></div>
-    <div class="whead" id="whead"><div class="eyebrow">בשטח</div><h2>כורים. מעמיסים. <span class="display">בלי לעצור.</span></h2></div>
+    <div class="whead" id="whead"><div class="eyebrow">בשטח</div><h2>כורים. ממחזרים. <span class="display">בלי לעצור.</span></h2></div>
     <div class="dwrap" id="dwrap">
       <div class="mach" id="mDrill" role="img" aria-label="מכונת קידוח ממותגת אל יד חרוצים, קודחת בסלע"><div class="wfloor" aria-hidden="true"></div>
         <div class="mrig" id="rDrill"><img class="lay" src="assets/img/story/drill-rig.webp" alt=""><i class="dtrk dtb" id="dtb"></i><i class="dtrk dtt" id="dtt"></i><img class="dspr" id="dspr" src="assets/img/story/drill-rotor.webp" alt=""><canvas class="dfx" id="fxDrill" aria-hidden="true"></canvas></div>
       </div>
       <div class="wcap"><b>כרייה</b><span>קידוח ופיתוח בנכס הכרייה בטנזניה</span></div>
     </div>
-    <div class="wcap" id="scap"><b>יבוא ולוגיסטיקה</b><span>מכולות מהנמל באשדוד, ישר למחסן</span></div>
+    <div class="wcap" id="scap"><b>שינוע ולוגיסטיקה</b><span>מהשטח, דרך הנמל, ועד היעד</span></div>
     <div class="hand" id="handT" aria-hidden="true"><i class="tshd"></i><img class="hb" alt=""><i class="hw" style="left:12.312%;top:74.316%"></i><i class="hw" style="left:37.188%;top:74.707%"></i><i class="hw" style="left:66.125%;top:74.576%"></i><i class="hw" style="left:74.875%;top:74.576%"></i></div>
     <img class="hand" id="handC" alt="">
     <div class="stg" id="stg">
@@ -68,60 +68,128 @@
   </div>
 </section>
 
-<!-- ============ 2. המשאית נוסעת עם המכולה, וכותרות מתחלפות בגלילה ============
-     הסקריפט: assets/js/home/home.js -->
-<section class="flow" id="top">
-  <div class="pin" id="pin">
-    <div class="gcover tcov" id="tcov" aria-hidden="true"><span>מה אנחנו עושים</span></div>
-    <div class="speedo" id="tspd" aria-hidden="true"><b>35</b> KM/H</div>
-    <div class="cam" id="cam">
-      <div class="floor"></div>
-      <div class="rig" id="rig"><i class="tshd" aria-hidden="true"></i>
-        <div class="lines" id="lines"></div>
-        <img class="base" src="assets/img/truck/truck.webp" alt="משאית של אל יד חרוצים">
-        <div id="boxes"></div>
-        <img class="cont" id="cont" src="assets/img/truck/container.webp" alt="">
-        <div class="wheel" style="left:12.312%;top:74.316%;background-image:url(assets/img/truck/wheel-1.webp)"></div><div class="wheel" style="left:37.188%;top:74.707%;background-image:url(assets/img/truck/wheel-2.webp)"></div><div class="wheel" style="left:66.125%;top:74.576%;background-image:url(assets/img/truck/wheel-3.webp)"></div><div class="wheel" style="left:74.875%;top:74.576%;background-image:url(assets/img/truck/wheel-4.webp)"></div>
-      </div>
-      <div class="dust" id="d1"></div><div class="dust" id="d2"></div><div class="dust" id="d3"></div>
-    </div>
-
-    <div class="fadeb" id="fadeb"></div>
-    <div class="cue" id="cue"><span>גללו</span><span class="ln"><i></i></span></div>
-
-    <div class="cap" data-from=".17" data-to=".36"><div class="eyebrow">יבוא ישיר</div><h2>חתכו את המתווך</h2><p class="muted">גישה ישירה למלאי מותגים גלובליים, מהמקור לקיוסקים, למכולות ולרשתות הקמעונאות.</p></div>
-    <div class="cap" data-from=".47" data-to=".67"><div class="eyebrow">המטען</div><h2>מאריזה בודדת ועד מכולה ימית מלאה</h2><p class="muted">מרכז הפצה באשדוד, לוגיסטיקה לכל הארץ וזמני אספקה קצרים.</p></div>
-    <div class="cap" data-from=".84" data-to="1.01"><div class="eyebrow">המחיר</div><h2>מחירי רשתות, לכל עסק</h2><p class="muted">הבטיחו מחירים נמוכים על משלוחים שעוד בדרך, לפני שהם מגיעים לישראל.</p><a class="btn solid ring" href="#contact">פתיחת חשבון סחר</a></div>
-    <div class="prog accent-gradient" id="prog"></div>
-  </div>
-</section>
-
-<!-- ============ 3. הקרטון התלת־ממדי נפתח ============
-     הסקריפט: assets/js/home/box-3d.js -->
-<section class="boxrev" id="reveal">
-  <div class="rpin">
-    <div class="rglow"></div>
-    <div class="rcap" id="rcap"><div class="eyebrow">תחומי מוצרים</div><h2>מותגים מובילים. <span class="display">ישר מהמקור.</span></h2><p class="muted">Dove, Vaseline, Rexona, Axe, TRESemmé ועוד. טואלטיקה והיגיינה, מוצרי בית, מזון יבש ומכולת.</p></div>
-  </div>
-</section>
-
-<!-- ============ 4. מה אנחנו עושים: ארבעה כרטיסים שמובילים לעמודי התחומים ============ -->
-<section class="sec" id="services">
+<!-- ============ 2. כרייה ומחזור מתכות: התחום המוביל ============
+     כותרת, נתוני הזנבות בעולם ושלושת תחומי הכרייה (אותו תוכן כמו בעמוד הכרייה). -->
+<section class="sec metals hmine" id="mining" aria-labelledby="mineT">
+  <div class="mbg" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="anchor" id="a1"><span class="sh" id="sh"></span></div>
     <div class="head reveal">
       <div>
-        <div class="eyebrow">מה אנחנו עושים</div>
-        <h2>מותגים גלובליים, <span class="display">בלי מתווכים</span></h2>
-        <p class="muted">אל יד חרוצים בע"מ היא מרכז סחר ויבואנית מאשדוד. אנחנו מייבאים יבוא מקביל של מותגים בינלאומיים מובילים ומפיצים אותם בסיטונאות, כך שגם דוכן קטן נהנה ממחירים שבדרך כלל שמורים לרשתות הגדולות.</p>
+        <div class="eyebrow">כרייה, מתכות ומשאבים</div>
+        <h2 id="mineT">המתכת כבר<br>נמצאת כאן.</h2>
+        <p class="muted">עיבוד זנבות, סיגים ושאריות עיבוד בטכנולוגיה ירוקה, פיתוח מכרות ומסחר פיזי במתכות, בשמונה עשרה מדינות ובארבע יבשות.</p>
       </div>
-      <a class="pillbtn ring" href="contact.html">פתיחת חשבון סחר <span aria-hidden="true">←</span></a>
+      <a class="pillbtn ring" href="mining.html">לעמוד הכרייה <span aria-hidden="true">←</span></a>
     </div>
-    <div class="bento">
-      <a class="card c7 reveal" href="brands.html"><img src="assets/img/photos/consumer-goods.webp" alt="מחסן עם מדפים של מוצרי טואלטיקה, ניקיון ומוצרי בית"><span class="cinfo"><b>מוצרי צריכה ממותגים</b><span>תיקי מותגים מלאים של Unilever ו־Procter &amp; Gamble: טואלטיקה, היגיינה, כביסה, מוצרי בית וטיפוח.</span></span></a>
-      <a class="card tall c5 reveal" href="food.html"><img src="assets/img/photos/food.webp" alt="שקי סוכר, קמח ואורז, חבילות פסטה ובקבוקי שמן במחסן"><span class="cinfo"><b>סחורות מזון</b><span>מזון יבש ומכולת בהיקף גדול: שמן חמניות, סוכר, חיטה, פסטה, קמח וחטיפים.</span></span></a>
-      <a class="card tall c5 reveal" href="steel.html"><img src="assets/img/photos/steel.webp" alt="צרורות מוטות פלדה, פרופילים וגלילי פלדה בחצר אחסון"><span class="cinfo"><b>פלדה וחומרי בניין</b><span>יבוא מוטות פלדה ומוצרי מתכת ממפעלים בינלאומיים, לקבלנים ולסוחרי חומרי בניין.</span></span></a>
-      <a class="card c7 reveal" href="buy.html"><img src="assets/img/photos/port-ashdod.webp" alt="נמל מכולות מהאוויר: אוניית מטען, מנופים ושורות של מכולות"><span class="cinfo"><b>לוגיסטיקת נמל</b><span>מרכז הפצה באשדוד ואספקה לכל הארץ, מאריזה בודדת ועד מכולה ימית מלאה.</span></span></a>
+    <!-- מחזור מתכות: תמונה מהשטח ליד ההסבר על הטכנולוגיה הירוקה -->
+    <article class="feature recycle reveal">
+      <figure>
+        <img src="assets/img/field/plant-tanks.webp" alt="אנשי צוות הולכים בשביל לעבר מכלי עיבוד כחולים גדולים" loading="lazy" />
+      </figure>
+      <div>
+        <div class="eyebrow">מחזור מתכות</div>
+        <h3>מחזירים את המתכת לשימוש</h3>
+        <p>מיליארדי טונות של חומר שכבר נכרה מחכים בערמות ובמאגרים. אנחנו משיבים מהם מתכות בעלות ערך, בלי ציאניד ובלי חציבה חדשה.</p>
+        <a class="btn2" href="mining.html">לעמוד הכרייה <span aria-hidden="true">←</span></a>
+      </div>
+    </article>
+    <div class="opp reveal">
+      <div><b>13Bt</b><span>זנבות בשנה</span></div>
+      <div><b>8,500</b><span>מתקני אחסון</span></div>
+      <div><b>217Bm³</b><span>נפח מצטבר</span></div>
+      <div><b>0</b><span>חציבה חדשה נדרשת</span></div>
+    </div>
+    <p class="oppsrc">
+      מיליארדי טונות של חומר שכבר נכרה ונזנח. הטווח בספרות: 7–14 מיליארד טון בשנה. מקורות: Global Tailings
+      Review; Nature Reviews Earth &amp; Environment (2024).
+    </p>
+    <div class="mcards">
+      <article class="mcard reveal">
+        <div class="mtop">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9c4-4 12-4 16 0" />
+            <path d="M12 5.5V7" />
+            <path d="M12 7l-6.5 13" />
+            <path d="M3 20h18" /></svg
+          ><span class="mnum">01</span>
+        </div>
+        <h3>כרייה ופיתוח מכרות</h3>
+        <p>
+          נכס כרייה פעיל בניארוגוסו, טנזניה: מפעל CIP בקצב של 500 טון לשעה, שמפיק זהב מעפרה בדירוג של כ־4.5
+          חלקי מיליון.
+        </p>
+      </article>
+      <article class="mcard reveal">
+        <div class="mtop">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z" />
+            <path d="M5 19l7-7" /></svg
+          ><span class="mnum">02</span>
+        </div>
+        <h3>טכנולוגיה ירוקה להשבת מתכות</h3>
+        <p>
+          טכנולוגיה להפרדת מתכות ולהשבתן מטיילינגס ומחומרי כרייה, הפועלת בטמפרטורה ובלחץ הסביבה, ללא ציאניד וללא
+          ממסים אורגניים. הגישה משלבת עיבוד חומרים עם אחריות סביבתית, במטרה להפוך שאריות כרייה למשאבים בעלי ערך
+          כלכלי.
+        </p>
+      </article>
+      <article class="mcard reveal">
+        <div class="mtop">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 17l2 3h14l2-3z" />
+            <path d="M6 17V9h12v8" />
+            <path d="M9 9V5h6v4" /></svg
+          ><span class="mnum">03</span>
+        </div>
+        <h3>מסחר פיזי</h3>
+        <p>רכש ישיר מיצרנים באוגנדה, בזמביה ובטנזניה, בלוגיסטיקה מבוקרת עד בית הזיקוק. מעל $300M מאז 2022.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. מהשטח: תמונות וסרטונים אמיתיים (מלאים בעמוד הכרייה) ============ -->
+<section class="sec field hfield" id="field" aria-labelledby="fieldT">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">מהשטח</div>
+        <h2 id="fieldT">מהקרקע ועד המטיל</h2>
+        <p>תמונות וסרטונים מהאתרים שאנחנו עובדים בהם: סיורים, דיגום, עיבוד ומסחר.</p>
+      </div>
+      <a class="pillbtn ring" href="mining.html#field">כל התמונות מהשטח <span aria-hidden="true">←</span></a>
+    </div>
+    <div class="hmosaic reveal">
+      <figure class="tile big">
+        <img src="assets/img/field/plant-inspection.webp" alt="שלושה אנשי צוות בקסדות מסתכלים על מסננת גדולה במפעל" loading="lazy" decoding="async" />
+        <figcaption>בדיקה במפעל</figcaption>
+      </figure>
+      <figure class="tile vid">
+        <video data-field src="assets/video/ore-sample.mp4" poster="assets/img/field/ore-sample-poster.webp" muted loop playsinline preload="none" aria-label="סרטון: דוגמת עפרה מבריקה ביד"></video>
+        <span class="vbadge" aria-hidden="true">וידאו</span>
+        <figcaption>דוגמת עפרה מקרוב</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets/img/field/bars-scale.webp" alt="עשרה מטילים ממוספרים על משקל דיגיטלי" loading="lazy" decoding="async" />
+        <figcaption>שקילה ותיעוד של מטילים</figcaption>
+      </figure>
+      <figure class="tile wide">
+        <img src="assets/img/field/tailings-mound.webp" alt="איש צוות באפוד כתום עומד על ערמת עפר אדומה, ומאחוריו ערמות חומר שנכרה" loading="lazy" decoding="async" />
+        <figcaption>ערמות חומר שנכרה</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. יבוא: שורה קטנה בלבד, עם קישור לעמוד תחומי הפעילות ============ -->
+<section class="hside" aria-labelledby="sideT">
+  <div class="wrap">
+    <div class="hside-in reveal">
+      <div>
+        <h2 id="sideT">ופועלים גם ביבוא והפצה</h2>
+        <p class="muted">מוצרי צריכה ממותגים, סחורות מזון ופלדה, דרך נמל אשדוד.</p>
+      </div>
+      <a class="btn2" href="trade.html">לתחומי היבוא <span aria-hidden="true">←</span></a>
     </div>
   </div>
 </section>

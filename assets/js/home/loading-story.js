@@ -11,9 +11,16 @@
   if (!sec || !G) return;
   var IW = G.IW,
     IH = G.IH;
-  var contSrc = (document.getElementById('cont') || {}).src || '',
-    tb = document.querySelector('#top .base'),
+  // תמונות המשאית והמכולה: מסצנת המשאית אם יש כזו בעמוד, אחרת ישר מתיקיית התמונות
+  // (הכתובת מחושבת מכתובת הסקריפט, כך שזה עובד גם בתיקיות השפות)
+  var TRUCK = new URL('../../img/truck/', document.currentScript.src).href;
+  var contSrc = (document.getElementById('cont') || {}).src || TRUCK + 'container.webp',
+    tb = document.querySelector('#top .base') || { src: TRUCK + 'truck.webp' },
     tw = [].slice.call(document.querySelectorAll('#top .wheel'));
+  if (!tw.length)
+    tw = [1, 2, 3, 4].map(function (n) {
+      return { style: { backgroundImage: 'url(' + TRUCK + 'wheel-' + n + '.webp)' } };
+    });
   [].forEach.call(document.querySelectorAll('#cbox .ff,#cbox .fb'), function (e) {
     e.src = contSrc;
   });

@@ -1,5 +1,5 @@
 /* =========================================================
-   דף הבית: מסך טעינה, משאית והופעה בגלילה
+   דף הבית: מסך טעינה, משאית (אם קיימת בעמוד) והופעה בגלילה
    מסך הפתיחה עם המונה (פעם אחת בכל ביקור), סצנת המשאית שנוסעת ומקבלת את המכולה,
    כניסת הכותרת, והופעת אלמנטים בגלילה. משתמש בספריית GSAP.
    ========================================================= */
@@ -24,6 +24,8 @@
     tcov = document.getElementById('tcov'),
     tspd = document.getElementById('tspd'),
     baseImg = document.querySelector('#top .base');
+  // דף הבית בלי סצנת המשאית: נשארים רק מסך הטעינה, ההופעה בגלילה והמונים
+  var truck = !!flow;
   var HANDOFF = 140; // px of the 360px overlap (CSS #top) where the truck section stays hidden
   var Z = 1.9,
     W = 6.5,
@@ -41,7 +43,7 @@
     fx = 0,
     fy = 0,
     k = 0;
-  rows.forEach(function (r, ri) {
+  if (truck) rows.forEach(function (r, ri) {
     var top = BED - (ri + 1) * H - ri * 0.15;
     for (var i = 0; i < r.n; i++) {
       k++;
@@ -216,7 +218,7 @@
     dust = [1, 2, 3].map(function (i) {
       return document.getElementById('d' + i);
     });
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; truck && i < 7; i++) {
     var l = document.createElement('i');
     l.style.top = 36 + i * 7 + (i % 2) * 2 + '%';
     l.style.left = 99 + (i % 3) * 5 + '%';
@@ -310,7 +312,7 @@
       }
     });
   }
-  setDrive(0, 0);
+  if (truck) setDrive(0, 0);
   driveStarted = true;
   introDone = true; // the truck arrives from the opening story
 
@@ -335,7 +337,7 @@
     loader.classList.add('done');
     document.body.classList.remove('locked');
     heroIn();
-    drive();
+    if (truck) drive();
   }
 
   var seen = false,
@@ -429,7 +431,7 @@
       requestAnimationFrame(function () {
         tick = false;
         __more = false;
-        frame();
+        if (truck) frame();
         navState();
         if (__more) req();
         else __pL = 0;
@@ -438,10 +440,12 @@
   }
   addEventListener('scroll', req, { passive: true });
   EYonResize(function () {
-    size();
+    if (truck) size();
     req();
   });
-  size();
-  frame();
+  if (truck) {
+    size();
+    frame();
+  }
   navState();
 })();

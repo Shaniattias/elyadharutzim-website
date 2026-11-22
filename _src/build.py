@@ -369,6 +369,11 @@ if __name__ == '__main__':
         if LANG != 'he':
             js_dictionary()
     sitemap(built)
+    # דף הבית בעיצוב הכחול נבנה בנפרד ומחליף את index.html שנבנה מ-_src/pages/index.html
+    sys.path.insert(0, os.path.join(SRC, 'home'))
+    import build_home
+    for m in build_home.build():
+        MISSING.add(m) if isinstance(MISSING, set) else MISSING.append(m)
     print('built %d pages in %d languages' % (len(built), len(LANGS)))
     if MISSING:
         print('\nMISSING TRANSLATIONS (%d): add them to _src/i18n/*.json' % len(MISSING))
