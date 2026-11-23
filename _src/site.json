@@ -24,7 +24,7 @@
   "menu": [
     { "href": "index.html", "label": "בית" },
     { "href": "about.html", "label": "מי אנחנו" },
-    { "href": "trade.html", "label": "תחומי פעילות", "also": ["brands.html", "food.html", "steel.html", "mining.html"] },
+    { "href": "trade.html", "label": "תחומי פעילות", "also": ["brands.html", "food.html", "steel.html", "mining.html", "commodities.html"] },
     { "href": "buy.html", "label": "איך רוכשים" }
   ],
 

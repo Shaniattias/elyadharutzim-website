@@ -379,4 +379,5 @@ if __name__ == '__main__':
         print('\nMISSING TRANSLATIONS (%d): add them to _src/i18n/*.json' % len(MISSING))
         for m in sorted(MISSING):
             print('  -', m[:120])
+        open('/tmp/missing.json', 'w').write(json.dumps(sorted(MISSING), ensure_ascii=False, indent=0))
         sys.exit(1)
