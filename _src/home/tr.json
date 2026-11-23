@@ -754,5 +754,65 @@
   "fr": "Importation et négoce · El Yad Harutzim Ltd",
   "de": "Import und Handel · El Yad Harutzim Ltd",
   "es": "Importación y comercio · El Yad Harutzim Ltd"
+ },
+ "אוניית מכולות בנמל": {
+  "en": "Container ship in port",
+  "fr": "Porte-conteneurs au port",
+  "de": "Containerschiff im Hafen",
+  "es": "Buque portacontenedores en el puerto"
+ },
+ "04 / יבוא ומסחר": {
+  "en": "04 / Import and trade",
+  "fr": "04 / Importation et négoce",
+  "de": "04 / Import und Handel",
+  "es": "04 / Importación y comercio"
+ },
+ "יבוא ומסחר סיטונאי": {
+  "en": "Wholesale import and trade",
+  "fr": "Importation et négoce de gros",
+  "de": "Großhandel und Import",
+  "es": "Importación y comercio mayorista"
+ },
+ "יבוא והפצה סיטונאית של מוצרי צריכה ממותגים מנמל אשדוד, לשווקים בישראל ובעזה.": {
+  "en": "Import and wholesale distribution of branded consumer goods from Ashdod port, for markets in Israel and Gaza.",
+  "fr": "Importation et distribution en gros de produits de consommation de marque depuis le port d’Ashdod, pour les marchés d’Israël et de Gaza.",
+  "de": "Import und Großhandelsvertrieb von Markenkonsumgütern über den Hafen Aschdod für die Märkte in Israel und Gaza.",
+  "es": "Importación y distribución mayorista de bienes de consumo de marca desde el puerto de Ashdod, para los mercados de Israel y Gaza."
+ },
+ "מותגים": {
+  "en": "Brands",
+  "fr": "Marques",
+  "de": "Marken",
+  "es": "Marcas"
+ },
+ "שווקים": {
+  "en": "Markets",
+  "fr": "Marchés",
+  "de": "Märkte",
+  "es": "Mercados"
+ },
+ "נמל": {
+  "en": "Port",
+  "fr": "Port",
+  "de": "Hafen",
+  "es": "Puerto"
+ },
+ "ישראל · עזה": {
+  "en": "Israel · Gaza",
+  "fr": "Israël · Gaza",
+  "de": "Israel · Gaza",
+  "es": "Israel · Gaza"
+ },
+ "אשדוד": {
+  "en": "Ashdod",
+  "fr": "Ashdod",
+  "de": "Aschdod",
+  "es": "Ashdod"
+ },
+ "לעמוד היבוא והמסחר": {
+  "en": "Import and trade page",
+  "fr": "Page importation et négoce",
+  "de": "Zur Seite Import und Handel",
+  "es": "Página de importación y comercio"
  }
 }

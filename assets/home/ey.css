@@ -141,6 +141,7 @@ h1,h2,h3{overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto}
 .panel.dark .pn{color:rgba(255,255,255,.5)}
 .panel.dark .ptxt ul,.panel.dark .ptxt li{border-color:rgba(255,255,255,.16)}
 .panel.dark .ptxt li span{color:rgba(255,255,255,.6)}
+.ptxt .pmore{margin-top:32px}
 
 /* ===== scale band ===== */
 .scale{background:var(--night);color:#fff;padding:clamp(90px,12vw,160px) 0;position:relative;overflow:hidden}
